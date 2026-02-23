@@ -1,0 +1,26 @@
+const Storage = {
+    setUser: (user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+    },
+
+    getUser: () => {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+    },
+
+
+    setToken: (token) => {
+        localStorage.setItem('token', token);
+    },
+
+    getToken: () => {
+        return localStorage.getItem('token');
+    },
+
+    clear: () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+    }
+};
+
+export default Storage;
